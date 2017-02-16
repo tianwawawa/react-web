@@ -1,0 +1,14 @@
+[alias]
+st = status
+br = branch
+co = checkout
+ci = commit
+[color]
+ui = auto
+[user]
+name = langrenbuzaidongying
+email = langren@163.com.cn
+[core]
+editor = vi
+[merge]
+tool = meld
