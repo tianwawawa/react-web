@@ -1,8 +1,8 @@
-const fs = require('fs-extra');
-const webpack = require('webpack');
-const debug = require('debug')('app:bin:compile');
-const webpackConfig = require('../config/webpack.prod.config');
-const project = require('../config/project.config');
+const fs = require('fs-extra')
+const webpack = require('webpack')
+const debug = require('debug')('app:bin:compile')
+const webpackConfig = require('../config/webpack.prod.config')
+const project = require('../config/project.config')
 
 // Wrapper around webpack to promisify its compiler and supply friendly logging
 const webpackCompiler = (webpackConfig) =>

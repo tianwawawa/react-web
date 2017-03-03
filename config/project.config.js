@@ -6,7 +6,7 @@ const config = {
   env: process.env.NODE_ENV || 'development',
   serverHost: ip.address(),
   serverPort: process.env.PORT || 8081,
-  compilFailonWarning: false
+  compilerFailOnWarning: false
 }
 
 config.globals = {
