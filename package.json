@@ -8,7 +8,11 @@
   "scripts": {
     "start": "better-npm-run start:dev",
     "start:dev": "better-npm-run start:dev",
-    "start:prod": "better-npm-run start:prod"
+    "start:prod": "better-npm-run start:prod",
+    "compile": "better-npm-run compile",
+    "compile:prod": "better-npm-run compile:prod",
+    "compile:dev": "better-npm0run compile:dev",
+    "clean": "better-npm-run clean"
   },
   "betterScripts": {
     "start:dev": {
@@ -22,6 +26,29 @@
       "command": "node bin/server.js",
       "env": {
         "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
+    },
+    "clean": {
+      "command": "rimraf dist"
+    },
+    "compile": {
+      "command": "yarn run clean && node bin/compile",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    },
+    "compile:prod": {
+      "command": "yarn run clean:dist && node bin/compile",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
+    },
+    "compile:dev": {
+      "command": "yarn run clean:dist && node bin/compile",
+      "env": {
+        "NODE_ENV": "development",
         "DEBUG": "app:*"
       }
     }
@@ -44,6 +71,7 @@
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-react": "latest",
     "eslint-plugin-standard": "^2.0.1",
+    "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.0",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.0",
@@ -64,10 +92,12 @@
     "loadash": "^0.0.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-helmet": "^4.0.0",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "rimraf": "^2.6.1"
   }
 }

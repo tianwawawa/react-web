@@ -34,7 +34,7 @@ webpackConfig.entry = {
 }
 
 webpackConfig.output = {
-  filename: '[name].js',
+  filename: '[name].[hash].js',
   path: path.join(project.basePath, 'dist'),
   publicPath: '/'
 }
@@ -152,8 +152,9 @@ webpackConfig.plugins.push(
 
 webpackConfig.plugins.push(
   new webpack.optimize.CommonsChunkPlugin({
-    names: ['vendor']
+    names: ['vendor'],
+    minChunks: Infinity
   })
 )
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

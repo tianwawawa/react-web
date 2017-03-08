@@ -3,3 +3,5 @@ ios_module/**
 android/**
 android_module/**
 node_modules/**
+dist/**
+src/index.html

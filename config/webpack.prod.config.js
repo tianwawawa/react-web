@@ -32,7 +32,7 @@ webpackConfig.entry = {
 }
 
 webpackConfig.output = {
-  filename: '[name].js',
+  filename: '[name].[chunkhash].js',
   path: path.join(project.basePath, 'dist'),
   publicPath: '/',
 }
@@ -143,7 +143,7 @@ webpackConfig.plugins.push(
   })
 )
 
-// Tells React to build in either dev or prod modes.
+// 定义全局变量
 webpackConfig.plugins.push(
   new webpack.DefinePlugin({
     __DEV__: false,

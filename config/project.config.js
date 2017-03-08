@@ -26,7 +26,8 @@ config.comilerStatus = {
 }
 
 config.paths = {
-  srcAssets: path.join(config.basePath, 'src/assets')
+  srcAssets: path.join(config.basePath, 'src/assets'),
+  distAssets: path.join(config.basePath, 'dist/assets')
 }
 
 module.exports = config
