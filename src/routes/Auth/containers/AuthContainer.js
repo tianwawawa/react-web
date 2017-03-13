@@ -12,13 +12,13 @@ class AuthContainer extends React.component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-//   actions: bindActionCreators({}, dispatch)
-// })
-//
-// const mapStateToProps = (state) => {
-//   return state
-// }
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({}, dispatch)
+})
 
-// export default connect(mapDispatchToProps, mapStateToProps)(AuthContainer)
-export default AuthContainer
+const mapStateToProps = (state) => {
+  return state
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthContainer)
+

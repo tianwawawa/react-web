@@ -3,7 +3,16 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Login from  '../components/Login'
 
+import { actions as authActions } from '../../../modules/AuthModule'
+
+const actions = {...authActions}
+
 class LoginContainer extends Component {
+
+  static propTypes = {
+    actions: React.PropTypes.object
+  }
+
   render () {
     return (
       <Login />
@@ -11,13 +20,13 @@ class LoginContainer extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-//   actions: bindActionCreators({}, dispatch)
-// })
-//
-// const mapStateToProps = (state) => {
-//   return state
-// }
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({}, dispatch)
+})
 
-// export default connect(mapDispatchToProps, mapStateToProps)(LoginContainer)
-export default LoginContainer
+const mapStateToProps = (state) => {
+  return state
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(LoginContainer)
+

@@ -1,13 +1,13 @@
 import { Record } from  'immutable'
 
-/* ------------------------- actions ------------------------*/
-/* ------------------------- initial state ------------------------*/
+/*-------------------------------- actions -------------------------------- */
+/*-------------------------------- initial state --------------------------------*/
 const InitialState = Record ({
 
 })
 
 const initialState = new InitialState()
-/* ------------------------- reducer ------------------------*/
+/*-------------------------------- reducer --------------------------------*/
 export const reducer = ( state = initialState, action ) => {
   return state
 }
