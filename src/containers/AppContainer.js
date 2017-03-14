@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 
 class AppContainer extends Component {
   render () {
-    console.log('精灵后台 打印----')
-    console.log(this.props.children)
     return (
       <div>
         {this.props.children}

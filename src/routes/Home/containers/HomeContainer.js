@@ -1,9 +1,14 @@
-import  React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from  'redux'
+import { bindActionCreators } from 'redux'
 import { Link } from  'react-router'
 
-class HomeContainer extends Component {
+class HomeContainer extends React.Component {
+
+  // componentWillMount() {
+  //   this.props.router.replace('/admin')
+  // }
+
   render () {
     return (
       <div>
@@ -13,13 +18,13 @@ class HomeContainer extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({}, dispatch)
-})
-
 const mapStateToProps = (state) => {
   return state
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({}, dispatch)
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer)
 

@@ -16,7 +16,6 @@ import Home from './routes/Home'
 // }
 
 export default (store) => {
-  console.log('*******************')
   return {
     path: 'admin',
     indexRoute: {

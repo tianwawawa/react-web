@@ -1,15 +1,16 @@
 import App from '../containers/AppContainer'
 import AdminRoute from './Admin'
-import Home from './Home'
 import Auth from './Auth'
 
+import Home from './Home'
 
+// Note: Instead of using JSX, we recommend using react-router PlainRoute objects to build route definition.
 const createRoutes = (store) => {
   return {
     path: '/',
     component: App,
     indexRoute: {
-      Home
+      component: Home
     },
     childRoutes: [
       AdminRoute(store),
