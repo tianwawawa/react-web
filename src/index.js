@@ -9,7 +9,7 @@ import makeRooterReducer from  './libs/reducers/index'
 
 const initialState = {}
 const store = createStore(
-  makeRooterReducer,
+  makeRooterReducer(),
   initialState,
   compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f)
 )

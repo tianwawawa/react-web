@@ -1,16 +1,30 @@
-import  React from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from  'redux'
-import Helmet from  'react-helmet'
+import { bindActionCreators } from 'redux'
+import { Link } from  'react-router'
 
-class HomeContainer extends  React.Component {
+class HomeContainer extends React.Component {
+
+  // componentWillMount() {
+  //   this.props.router.replace('/admin')
+  // }
+
   render () {
     return (
       <div>
-        <Helmet title='91集买' />
+        <Link to='admin'>admin</Link>
       </div>
     )
   }
 }
 
-export default HomeContainer
+const mapStateToProps = (state) => {
+  return state
+}
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({}, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer)
+
